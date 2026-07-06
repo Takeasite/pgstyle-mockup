@@ -36,21 +36,6 @@ pgstyle-maquette/
 └── README.md
 ```
 
-L'arborescence des pages détail sous `prestations/` reproduit les URL prévues pour le site final (`/prestations/peinture-airless`, etc.).
-
-## Charte graphique
-
-| Rôle | Couleur |
-|------|---------|
-| Bleu profond (identité, fonds) | `#14385C` |
-| Bleu principal (titres) | `#1C5882` |
-| Bleu vif (boutons, liens) | `#2F7BA8` |
-| Bleu doux | `#7EBCCE` |
-| Bleu pâle | `#AFD3DA` |
-| Gris texte | `#5C5F60` |
-
-Signature visuelle récurrente : l'éventail nuancier repris du logo.
-
 ## À valider avec Pierrick
 
 - Chiffres placeholders : « 16 ans », « 48 h », « 100 % devis gratuits ».
@@ -58,10 +43,6 @@ Signature visuelle récurrente : l'éventail nuancier repris du logo.
 - Témoignages : actuellement des exemples, à remplacer par de vrais avis.
 - Section Savoir-faire : à enrichir après l'interview (parcours, anecdotes).
 - Textes des 4 prestations : humanisés à partir de ses documents, à relire avec lui.
-
-## Passage au site final
-
-Le site définitif sera construit en PHP (stack OVH). Cette maquette fournit le design, la structure de navigation et le contenu rédactionnel de référence. Le CSS (`assets/css/style.css`) et les logos sont directement réutilisables.
 
 ---
 
