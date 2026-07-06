@@ -1,4 +1,4 @@
-# PG Style, maquette du site
+#PG Style, maquette du site
 
 Maquette statique du site de **PG Style**, peintre intérieur mécanisé à Baume-les-Dames (Besançon et environs).
 
