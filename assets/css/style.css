@@ -1250,7 +1250,7 @@ h3 {
   margin-top: 40px;
 }
 .machines__head {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 .machines__head h3 {
   font-size: 22px;
@@ -1259,30 +1259,30 @@ h3 {
 }
 .machines__grid {
   display: flex;
-  gap: 22px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 .machine {
-  flex: 1 1 calc(33.333% - 15px);
+  flex: 1 1 calc(33.333% - 12px);
   background: #fff;
   border: 1px solid var(--gray-100);
   border-radius: var(--radius);
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  align-items: stretch;
   box-shadow: var(--shadow-sm);
   transition: transform .18s var(--ease), box-shadow .2s;
+  min-width: 0;
 }
 .machine:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
 }
 .machine__photo {
-  aspect-ratio: 4 / 3;
+  flex: none;
+  width: 110px;
+  align-self: stretch;
   background: var(--gray-50);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 .machine__photo img {
@@ -1291,37 +1291,35 @@ h3 {
   object-fit: cover;
   display: block;
 }
-.machine__photo--empty {
-  background: repeating-linear-gradient(45deg, var(--gray-50), var(--gray-50) 11px, var(--gray-100) 11px, var(--gray-100) 22px);
-  border-bottom: 1px dashed var(--gray-300);
-  color: var(--gray-500);
-  font-size: 13px;
-  font-weight: 600;
-}
 .machine__body {
-  padding: 20px 22px 22px;
+  padding: 14px 16px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .machine__brand {
-  font-size: 11.5px;
+  font-size: 10.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--blue-bright);
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .machine__body h4 {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--blue-deep);
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   letter-spacing: -.01em;
 }
 .machine__body p {
-  font-size: 14.5px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.5;
   color: var(--gray-700);
+  margin: 0;
 }
 
 /* ---------- Responsive ---------- */
