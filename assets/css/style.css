@@ -1273,10 +1273,19 @@ h3 {
   box-shadow: var(--shadow-sm);
   transition: transform .18s var(--ease), box-shadow .2s;
   min-width: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 .machine:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+}
+.machine:focus-visible {
+  outline: 3px solid var(--blue-bright);
+  outline-offset: 2px;
 }
 .machine__photo {
   flex: none;
@@ -1284,6 +1293,7 @@ h3 {
   align-self: stretch;
   background: var(--gray-50);
   overflow: hidden;
+  display: block;
 }
 .machine__photo img {
   width: 100%;
@@ -1307,7 +1317,8 @@ h3 {
   display: block;
   margin-bottom: 4px;
 }
-.machine__body h4 {
+.machine__name {
+  display: block;
   font-size: 15px;
   font-weight: 700;
   color: var(--blue-deep);
@@ -1315,11 +1326,123 @@ h3 {
   margin-bottom: 8px;
   letter-spacing: -.01em;
 }
-.machine__body p {
+.machine__desc {
+  display: block;
   font-size: 13.5px;
   line-height: 1.5;
   color: var(--gray-700);
   margin: 0;
+}
+
+/* ---------- Modale machine ---------- */
+.machine-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.machine-modal.is-open {
+  display: flex;
+  animation: mmFade .18s var(--ease);
+}
+@keyframes mmFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.machine-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 56, 92, .65);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.machine-modal__panel {
+  position: relative;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  max-width: 880px;
+  width: 100%;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  animation: mmSlide .22s var(--ease);
+}
+@keyframes mmSlide {
+  from { transform: translateY(12px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.machine-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, .92);
+  color: var(--blue-deep);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+  transition: background .15s, transform .15s;
+}
+.machine-modal__close:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+.machine-modal__photo {
+  flex: 1 1 55%;
+  background: var(--gray-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 320px;
+}
+.machine-modal__photo img {
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 48px);
+  object-fit: contain;
+  display: block;
+}
+.machine-modal__body {
+  flex: 1 1 45%;
+  padding: 36px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  overflow-y: auto;
+}
+.machine-modal__brand {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--blue-bright);
+}
+.machine-modal__name {
+  font-size: 26px;
+  color: var(--blue-deep);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  margin: 0;
+}
+.machine-modal__desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin: 0;
+}
+body.no-scroll {
+  overflow: hidden;
 }
 
 /* ---------- Responsive ---------- */
@@ -1456,6 +1579,25 @@ h3 {
 
   .machine {
     flex: 1 1 100%;
+  }
+  .machine-modal__panel {
+    flex-direction: column;
+    max-height: calc(100vh - 32px);
+  }
+  .machine-modal__photo {
+    flex: 0 0 auto;
+    min-height: 260px;
+    max-height: 45vh;
+  }
+  .machine-modal__body {
+    flex: 1 1 auto;
+    padding: 28px 24px;
+  }
+  .machine-modal__name {
+    font-size: 22px;
+  }
+  .machine-modal {
+    padding: 16px;
   }
 
   .footer__grid>div:first-child {
