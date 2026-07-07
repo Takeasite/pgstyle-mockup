@@ -1245,6 +1245,85 @@ h3 {
   padding: 8px 16px
 }
 
+/* ---------- Encart Machines ---------- */
+.machines {
+  margin-top: 40px;
+}
+.machines__head {
+  margin-bottom: 22px;
+}
+.machines__head h3 {
+  font-size: 22px;
+  color: var(--blue-deep);
+  margin-top: 6px;
+}
+.machines__grid {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.machine {
+  flex: 1 1 calc(33.333% - 15px);
+  background: #fff;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s var(--ease), box-shadow .2s;
+}
+.machine:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.machine__photo {
+  aspect-ratio: 4 / 3;
+  background: var(--gray-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.machine__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.machine__photo--empty {
+  background: repeating-linear-gradient(45deg, var(--gray-50), var(--gray-50) 11px, var(--gray-100) 11px, var(--gray-100) 22px);
+  border-bottom: 1px dashed var(--gray-300);
+  color: var(--gray-500);
+  font-size: 13px;
+  font-weight: 600;
+}
+.machine__body {
+  padding: 20px 22px 22px;
+}
+.machine__brand {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--blue-bright);
+  display: block;
+  margin-bottom: 6px;
+}
+.machine__body h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--blue-deep);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  letter-spacing: -.01em;
+}
+.machine__body p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--gray-700);
+}
+
 /* ---------- Responsive ---------- */
 
 /* Tablette paysage : on resserre les marges et les gouttières */
@@ -1375,6 +1454,10 @@ h3 {
 
   .footer__grid>div {
     flex: 1 1 42%
+  }
+
+  .machine {
+    flex: 1 1 100%;
   }
 
   .footer__grid>div:first-child {
