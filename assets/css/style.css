@@ -190,6 +190,12 @@ h3 {
   width: auto
 }
 
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 14px
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -1293,7 +1299,7 @@ h3 {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)
 }
 
-@media(max-width:1080px) and (min-width:921px) {
+@media(max-width:1080px) {
   .header__social-label {
     display: none
   }
@@ -1617,8 +1623,9 @@ body.no-scroll {
   }
 
   .header__social {
-    justify-content: center;
-    margin: 4px 0 6px
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none
   }
 
   .nav__burger {
@@ -1775,6 +1782,24 @@ body.no-scroll {
 
 /* Très petit mobile */
 @media(max-width:380px) {
+  .header__right {
+    gap: 8px
+  }
+
+  .header__social {
+    gap: 6px
+  }
+
+  .header__social-link {
+    width: 34px;
+    height: 34px
+  }
+
+  .header__social-link svg {
+    width: 18px;
+    height: 18px
+  }
+
   h1 {
     font-size: 30px
   }
