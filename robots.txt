@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Disallow: /includes/
+Disallow: /partials/
+Disallow: /install.php
+
+Sitemap: https://pg-style.pro/sitemap.php
